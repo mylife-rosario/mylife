@@ -1,0 +1,14 @@
+{% extends 'mylife/base.html' %}
+{% block content %}
+<h2>Registrar usuario</h2>
+
+<form method="POST">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <button type="submit" onmouseover="mOver6(this)" onmouseout="mOut6(this)" >Registrarse</button>
+</form>
+
+<hr />
+
+<a href="/login" onmouseover="mOver5(this)" onmouseout="mOut5(this)">Iniciar sesión</a>
+{% endblock %}

@@ -1,0 +1,152 @@
+{% load static %}
+
+
+<!DOCTYPE HTML>
+
+<html>
+    
+<head>
+    <meta charset="UTF-8">
+    <!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="ie.css" />
+    <![endif]-->
+    <!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="ie8-old.css" />
+    <![endif]-->
+    <!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="ie8-old.css" />
+    <![endif]-->
+    <!--[if gt IE 7]>
+	<link rel="stylesheet" type="text/css" href="ie8-up.css" />
+    <![endif]-->
+    <!--[if gte IE 8]>
+	<link rel="stylesheet" type="text/css" href="ie8-up.css" />
+    <![endif]-->
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"&amp;gt;>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/mylife.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <title>Bienvenido a Mylife</title>
+
+</head>
+
+<header>
+
+    <div class="page-header">
+        <div class="olaaa">&#128512;</div>
+
+        {% if user.is_authenticated %}
+
+    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+
+        
+        
+        <h1><a id="p2">
+            <svg height="130" width="200">
+                <defs>
+                  <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%"
+                    style="stop-color:rgb(69, 142, 201);stop-opacity:1" />
+                    <stop offset="100%"
+                    style="stop-color:rgb(0, 195, 255);stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+                <text fill="#ffffff" font-size="45" font-family="Verdana"
+                x="35" y="86">Mylife</text>
+              Sorry, your browser does not support inline SVG.
+            </svg>
+            Bienvenido a Mylife !!!</p>&#128512; &#128516; &#128525; &#128151;</p></a></h1>
+    </div>
+    
+    <ul>
+        <li><a href="/mylife" onmouseover="mOver3(this)" onmouseout="mOut3(this)">Inicio</a></li>
+        <li><a href="/quienessomos" onmouseover="mOver2(this)" onmouseout="mOut2(this)">Quienes somos</a></li>
+        <li><a href="/contacto" onmouseover="mOver(this)" onmouseout="mOut(this)">Contacto&#9993;</a></li>
+        <li style="float:right"><a class="active" href="/login" onmouseover="mOver4(this)" onmouseout="mOut4(this)">About</a></li>
+    </ul>
+
+
+
+
+
+
+
+
+   
+</header>
+
+<div>
+<button class="bt1 btr" onclick="javascript:void(window.open('https://www.instagram.com/mylife_productos/'));" title="Síguenos en Instagram">Instagram&#128247;</button>
+<button class="bt2 btb" onclick="javascript:void(window.open('https://www.facebook.com/Mylife_rosario-100941495277251'));" title="Síguenos en facebook">Facebook👍🏻</button>
+<button class="bt3 btg" onclick="javascript:void(window.open('https://web.whatsapp.com/'));" title="Síguenos en whatsapp" >Whatsapp&#9993;</button>
+
+<article class="arti">
+    <h1>Mylife Articulo</h1>
+    <p>Bienvenido a  milyfe un sitio web donde podras publicar tus productos nuevos o usados , lo que quieras vender o colaborar, ayudar
+        dejar un contacto para que te contacten otras personas.</p>
+    <p>Welcome to milyfe a website where you can publish your products or what you want to sell
+        leave a contact for other people to contact you.</p>
+</article>
+</div>
+
+<hr/>
+
+<body onload="checkCookie()">
+    
+
+    <div class="content container" > 
+
+
+
+        <div class="row">
+    
+            <div class="col-md-8">
+
+                                             
+                {% block content %}
+                {% endblock %}
+                                 
+            </div>
+    
+          </div>
+            <hr/>
+            <h1>&#128269;Nuestra Ubicacion!!</h1><br>
+
+          <div class="movre"><iframe src="https://www.google.com/maps/d/embed?mid=18QVFGM718FWEU2AXLfnC1kn65QcsVw0L" width="540" height="480" left="200px"></iframe></div>
+             <hr/>
+      </div>
+
+
+
+
+
+
+
+
+
+
+      <script src="{% static 'js/prueba.js' %}"></script>
+      <script id="dsq-count-scr" src="//mylife-django3.disqus.com/count.js" async></script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+     
+</body>
+
+
+<footer>
+    <span style='font-size:20px;'>&#127758;Español (Argentina)</span>
+    <p>Rosario Santa fe 2020  &#169; Creado con Python,Django,Html,Css,JavaScript,bootstrap<br>
+    <a href="mailto:mylife_2020-rosario@hotmail.com">mylife_2020-rosario@hotmail.com</a></p>
+</footer>
+   
+
+</html>

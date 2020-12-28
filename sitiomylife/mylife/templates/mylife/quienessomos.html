@@ -1,0 +1,43 @@
+{% extends 'mylife/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<p><h1 id="quii">Quienes Somos??</h1></p>
+<div class="bg-image"><img  src="{% static 'img/lamparita.jpg' %}" alt="Cinque Terre" width="auto" height="auto"  ></div>
+ <br/> <hr/> <div class="bg-text">
+      <p>
+        <h1>¿¿Quienes Somos??&#128580;</h1><br>
+        <br>
+        
+        &#128512;Somos una empresa Argentina, que tiene como principal objetivo brindar accesibilidad a las ventas de productos usados o nuevos de las personas u empresas.
+        <br>We are an Argentine company, whose main objective is to provide accessibility to the sales of used or new products of people or companies.</p>
+ </div>
+
+ <hr/>
+ <h1 id="quii">Deja Tus comentarios!!&#128514;</h1><br>
+ <div id="disqus_thread">
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://mylife-django3.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+ </div>
+
+ {% endblock %}
+
+   

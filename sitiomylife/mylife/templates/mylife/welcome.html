@@ -1,0 +1,52 @@
+
+{% extends 'mylife/base.html' %}
+{% block content %}
+
+           <h2 id="p7">Área para miembros</h2>
+
+           <b>{{request.user.username}}<h2></b>Bienvenido esta página es exclusiva para usuarios registrados.</p></h2>
+    
+           <a href="/logout">Cerrar sesión</a>
+ 
+
+                {% for post in posts %}
+                
+
+
+                {% if user.is_authenticated %}
+                    <div class="post">
+                        <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+
+                        <a href="/logout">Cerrar sesión</a>
+                        <h1><a  href="{% url 'post_detail' pk=post.pk %}">Mi publicacion ver : {{ post.mi_titulo }}</a></h1>
+                        <h3><p>Creado por  {{ post.nombre_mio }}</p></h3>
+                        <h3><p>En la ciudad de   {{ post.ciudad_mia }}</p></h3>
+
+                        <div class="date">
+                        <p>{{ post.fecha_publicacion }}</p>
+                        </div>                                                                 
+                    </div>
+
+                    {% endif %}
+                
+                {% endfor %}
+
+               
+    <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+    
+
+{% endblock %}
+
+
+
+
+
+
+
+               
+
+                
+
+              
+                
+              

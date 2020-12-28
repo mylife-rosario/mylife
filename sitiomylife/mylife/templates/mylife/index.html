@@ -1,0 +1,44 @@
+{% extends 'mylife/base.html' %}
+{% block content %}
+
+<a>Área para miembros</a>
+
+<b>{{request.user.username}}</b><a href="/logout"  id="cerr">Cerrar sesión</a><br/><p id="binn">Bienvenido esta página es exclusiva para usuarios registrados.<a href="http://127.0.0.1:8000/admin">Click aqui para Publicar en la web</a></a></p>
+
+
+
+
+
+
+{% for post in posts %}
+                 
+                {% if user.is_authenticated %}
+                    <div class="post">
+                        
+                        
+                        <h1><a href="{% url 'post_detail' pk=post.pk %}">Mi publicacion ver : {{ post.mi_titulo }}<span class="glyphicon glyphicon-plus"></span></a></h1>
+                        <h3><p>Creado por  {{ post.nombre_mio }}</p></h3>
+                        <h3><p>En la ciudad de   {{ post.ciudad_mia }}</p></h3>
+
+                        <div class="date">
+                        <p>{{ post.fecha_publicacion }}</p>
+                        </div>                                                                 
+                    </div>
+
+                  
+                    
+    
+                {% endif %}
+                
+                {% endfor %}
+
+                
+                
+{% endblock %}
+   
+    
+
+
+
+
+

@@ -1,0 +1,97 @@
+{% extends 'mylife/base.html' %}
+
+{% block content %}
+
+
+
+{% if user.is_authenticated %} 
+
+
+
+
+
+<div class="post">
+                
+
+
+    
+
+    <h1>{{ post.mi_titulo }}</h1>
+    <h3><p>Creado por  {{ post.nombre_mio }}</p></h3>
+    <h3><p>En la ciudad de   {{ post.ciudad_mia }}</p></h3>
+
+   
+
+
+  
+    <p>{{ post.mi_texto }}</p> 
+
+    
+
+
+    {% if user.is_authenticated %}            
+    <p><img src="{{ post.mi_foto.url }}" class="img-thumbnail" alt="User Image" enctype="multipart/form-data" ></p>
+    {% endif %}
+    
+    <div class="date">
+      
+        <p> Publicado {{ post.fecha_publicacion }}</p>
+    </div>
+
+
+
+
+
+    {% for comment in post.comments.all %}
+    {% if user.is_authenticated or comment.approved_comment %}
+    <div class="comment">
+        <div class="date">
+            {{ comment.created_date }}
+            {% if not comment.approved_comment %}
+            {% endif %}
+                
+        </div>
+        
+        <strong>{{ comment.autor }}</strong>
+        <p>{{ comment.texto|linebreaks }}</p>
+        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+        <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Add comment</a>
+        <a class="btn btn-default" href="{% url 'comment_remove' pk=comment.pk %}"><span class="glyphicon glyphicon-remove"></span>Eliminar</a>
+        <a class="btn btn-default" href="{% url 'comment_approve' pk=comment.pk %}"><span class="glyphicon glyphicon-ok"></span>Aprovar</a>
+        
+    </div>
+    {% endif %}
+     {% empty %}
+         <p>No comments here yet :(</p>
+     {% endfor %}
+
+    
+
+</div>
+
+
+
+
+
+
+
+  
+{% endif %}
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+

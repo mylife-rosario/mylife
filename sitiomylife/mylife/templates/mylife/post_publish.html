@@ -1,0 +1,9 @@
+{% if post.publish_date %}
+<div class="date">
+    <p>{{ post.mi_texto }}</p> 
+
+    {{ post.publish_date }}
+</div>
+{% else %}
+<a class="btn btn-default" href="{% url 'post_publish' pk=post.pk %}">Publicar</a>
+{% endif %}

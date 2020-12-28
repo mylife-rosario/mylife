@@ -1,0 +1,17 @@
+{% extends 'mylife/base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    <h2>Nuevo Posteo</h2>
+    <form method="POST" class="post-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+    <button type="submit" class="save btn btn-default">Subir</button>
+
+
+    </form>
+{% endif %}
+   
+
+{% endblock %}
